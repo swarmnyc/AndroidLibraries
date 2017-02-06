@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+
+version = '0.1'
+ext{
+    bintrayPackageName = "test"
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName version
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':core')
+    compile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    testCompile 'junit:junit:4.12'
+}
+
+apply from: "https://s3.amazonaws.com/swarm-dev/swarm-deploy.gradle"
