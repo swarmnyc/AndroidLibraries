@@ -2,6 +2,7 @@ package com.swarmnyc.testapp.test;
 
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -49,6 +50,6 @@ public class PackageUtilTest {
     public void launchAppTest() throws Exception {
         mainActivity.launchActivity(null);
 
-        PackageUtil.launchApp("com.android.browser");
+        PackageUtil.launchApp("com.android.calendar", new Bundle());
     }
 }
