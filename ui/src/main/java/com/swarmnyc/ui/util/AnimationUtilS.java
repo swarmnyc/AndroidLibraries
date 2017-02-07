@@ -7,25 +7,25 @@ import android.content.Context;
 import android.os.Build;
 import android.view.View;
 
-public class AnimationUtil
+public class AnimationUtils
 {
     private Context m_context;
 
-    public AnimationUtil(final Context context )
+    public AnimationUtils(final Context context )
     {
         m_context = context;
     }
 
-    public static AnimationUtil create(final Context context )
+    public static AnimationUtils create(final Context context )
     {
-        return new AnimationUtil( context );
+        return new AnimationUtils( context );
     }
 
     /**
      * Shows the progress UI and hides the login form.
      */
     @TargetApi( Build.VERSION_CODES.HONEYCOMB_MR2 )
-    public AnimationUtil show(final View... views )
+    public AnimationUtils show(final View... views )
     {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
@@ -65,7 +65,7 @@ public class AnimationUtil
     }
 
     @TargetApi( Build.VERSION_CODES.HONEYCOMB_MR2 )
-    public AnimationUtil hide(final View... views )
+    public AnimationUtils hide(final View... views )
     {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in

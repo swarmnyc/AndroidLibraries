@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.swarmnyc.testapp.MainActivity;
 import com.swarmnyc.testapp.R;
-import com.swarmnyc.ui.util.AnimationUtil;
+import com.swarmnyc.ui.util.AnimationUtils;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class AnimationUtilsTest {
     @Test
     public void showAndHideTest() throws Exception {
         MainActivity activity = mainActivity.getActivity();
-        final AnimationUtil utils = AnimationUtil.create(activity);
+        final AnimationUtils utils = AnimationUtils.create(activity);
         final TextView view = (TextView) activity.findViewById(R.id.txt_view);
 
         activity.runOnUiThread(new Runnable() {
