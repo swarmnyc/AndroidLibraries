@@ -6,13 +6,12 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
-import com.swarmnyc.core.utils.DateUtil;
+import com.swarmnyc.core.util.DateUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -30,7 +29,7 @@ public class ScreenShot {
     }
 
     public static void take(Activity activity) {
-        takeInternal(activity, getFilePath(activity, DateUtil.fileFormat(new Date())));
+        takeInternal(activity, getFilePath(activity, DateUtils.fileFormat(new Date())));
     }
 
     public static void take(Activity activity, String filename) {

@@ -1,11 +1,11 @@
-package com.swarmnyc.core.utils;
+package com.swarmnyc.core.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class DateUtil {
+public class DateUtils {
     private static DateFormat iso8601Format;
     private static DateFormat fileFormat;
 
