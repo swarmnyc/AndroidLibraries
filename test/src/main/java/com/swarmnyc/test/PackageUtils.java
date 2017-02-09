@@ -1,6 +1,7 @@
 package com.swarmnyc.test;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.os.Bundle;
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.InstrumentationRegistry.getTargetContext;
 
-public class PackageUtil {
+public class PackageUtils {
 
     public static void grantPermission(String permission) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -42,6 +43,17 @@ public class PackageUtil {
         PackageManager packageManager = getTargetContext().getPackageManager();
 
         return packageManager.getNameForUid(uid);
+    }
+
+    public static int getAppId(String name) {
+        PackageManager packageManager = getTargetContext().getPackageManager();
+
+        for (ApplicationInfo info : packageManager.getInstalledApplications(PackageManager.GET_META_DATA)) {
+            if (info.packageName.equals(name))
+                return info.uid;
+        }
+
+        return -1;
     }
 
     public static void launchApp(String app) {
