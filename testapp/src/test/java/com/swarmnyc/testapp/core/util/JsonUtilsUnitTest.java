@@ -1,16 +1,10 @@
 package com.swarmnyc.testapp.core.util;
 
-import android.util.Log;
-
-import com.google.gson.reflect.TypeToken;
-import com.swarmnyc.core.util.DateUtils;
 import com.swarmnyc.core.util.JsonUtils;
 
 import org.junit.Test;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;

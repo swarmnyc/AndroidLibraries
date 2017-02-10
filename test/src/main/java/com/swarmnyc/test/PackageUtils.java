@@ -1,14 +1,17 @@
 package com.swarmnyc.test;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 
+import java.util.List;
+
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.InstrumentationRegistry.getTargetContext;
 
-public class PackageUtil {
+public class PackageUtils {
 
     public static void grantPermission(String permission) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -42,6 +45,26 @@ public class PackageUtil {
         PackageManager packageManager = getTargetContext().getPackageManager();
 
         return packageManager.getNameForUid(uid);
+    }
+
+    public static int getAppId(String app) {
+        PackageManager packageManager = getTargetContext().getPackageManager();
+        //get a list of installed apps.
+        List<ApplicationInfo> packages = packageManager.getInstalledApplications(
+                PackageManager.GET_META_DATA);
+        int uid = 0;
+        //loop through the list of installed packages and see if the selected
+        //app is in the list
+        for (ApplicationInfo packageInfo : packages) {
+            if (packageInfo.packageName.equals(app)) {
+                //get the uid for the selected app
+                uid = packageInfo.uid;
+                break; //found a match, don't need to search anymore
+            }
+
+        }
+
+        return uid;
     }
 
     public static void launchApp(String app) {
