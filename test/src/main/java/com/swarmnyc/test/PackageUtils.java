@@ -49,22 +49,13 @@ public class PackageUtils {
 
     public static int getAppId(String app) {
         PackageManager packageManager = getTargetContext().getPackageManager();
-        //get a list of installed apps.
-        List<ApplicationInfo> packages = packageManager.getInstalledApplications(
-                PackageManager.GET_META_DATA);
-        int uid = 0;
-        //loop through the list of installed packages and see if the selected
-        //app is in the list
-        for (ApplicationInfo packageInfo : packages) {
-            if (packageInfo.packageName.equals(app)) {
-                //get the uid for the selected app
-                uid = packageInfo.uid;
-                break; //found a match, don't need to search anymore
-            }
 
+        for (ApplicationInfo info : packageManager.getInstalledApplications(PackageManager.GET_META_DATA)) {
+            if (info.packageName.equals(app))
+                return info.uid;
         }
 
-        return uid;
+        return 0;
     }
 
     public static void launchApp(String app) {
