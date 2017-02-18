@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "288636901715",
+    "project_id": "firebase-g-watchdog"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288636901715:android:e289150d6243d81f",
+        "android_client_info": {
+          "package_name": "com.swarmnyc.testapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgYkBxVhI0BZQrjpiHVogetmHhIfFmMrY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-91770939-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

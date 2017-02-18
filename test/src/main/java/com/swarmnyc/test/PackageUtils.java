@@ -12,6 +12,12 @@ import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.InstrumentationRegistry.getTargetContext;
 
 public class PackageUtils {
+    public static class Permissions {
+        public static final String READ_EXTERNAL_STORAGE = "android.permission.READ_EXTERNAL_STORAGE";
+        public static final String WRITE_EXTERNAL_STORAGE = "android.permission.WRITE_EXTERNAL_STORAGE";
+        public static final String READ_PHONE_STATE = "android.permission.READ_PHONE_STATE";
+        public static final String PACKAGE_USAGE_STATS = "android.permission.PACKAGE_USAGE_STATS";
+    }
 
     public static void grantPermission(String permission) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
