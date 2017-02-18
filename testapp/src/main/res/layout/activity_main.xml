@@ -12,10 +12,11 @@
         android:text="Hello World!" />
 
     <Button
-        android:text="Second Activity"
+        android:text="@string/second_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="102dp" />
+        android:layout_marginBottom="102dp"
+        android:id="@+id/button" />
 </RelativeLayout>

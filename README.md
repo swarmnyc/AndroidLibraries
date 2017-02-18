@@ -6,19 +6,19 @@ There are three libraries now.
 - core : Shared Non-UI code.
 
 ```gradle
-compile 'com.swarmnyc:core:0.1'
+compile 'com.swarmnyc:core:0.+'
 ```
 
 - ui : Shared UI code.
 
 ```gradle
-compile 'com.swarmnyc:ui:0.1'
+compile 'com.swarmnyc:ui:0.+'
 ```
 
 - test : Shared code for Test.
 
 ```gradle
-compile 'com.swarmnyc:test:0.1'
+compile 'com.swarmnyc:test:0.+'
 ```
 
 **mavenLocal and jCenter**
@@ -40,5 +40,8 @@ allprojects {
     }
 }
 ```
+
+## dependencies
+to be written
 
 
